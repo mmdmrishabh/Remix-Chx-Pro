@@ -1,0 +1,41 @@
+api_version = "2023-07"
+
+[[extensions]]
+type = "ui_extension"
+name = "Checkout Banner"
+handle = "checkout-banner"
+
+[[extensions.targeting]]
+target = "purchase.checkout.block.render"
+module = "./src/Checkout.jsx"
+export = "checkoutBlock"
+
+[extensions.capabilities]
+network_access = true
+block_progress = false
+api_access = false
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "deskSource"
+type = "single_line_text_field"
+name = "Desktop image url"
+description = "Enter an image url for desktop. Images can be uploaded in shopify files under settings."
+
+[[extensions.settings.fields]]
+key = "mobileSource"
+type = "single_line_text_field"
+name = "Mobile image url (Optional)"
+description = "Enter an image url for mobile. Images can be uploaded in shopify files under settings."
+
+[[extensions.settings.fields]]
+key = "link"
+type = "single_line_text_field"
+name = "Banner link (Optional)"
+description = "On click of banner this link will open"
+
+[[extensions.settings.fields]]
+key = "accessibilityDescription"
+type = "single_line_text_field"
+name = "Image Alt (Optional)"
+description = "Enter an accessibility description"
